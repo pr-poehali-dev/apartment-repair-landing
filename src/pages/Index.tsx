@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Icon from "@/components/ui/icon";
+import Calculator from "@/components/Calculator";
 import { useState } from "react";
 
 const Index = () => {
@@ -100,6 +101,7 @@ const Index = () => {
           </div>
           <nav className="hidden md:flex gap-8">
             <a href="#about" className="hover:text-primary transition-colors">О нас</a>
+            <a href="#calculator" className="hover:text-primary transition-colors">Калькулятор</a>
             <a href="#services" className="hover:text-primary transition-colors">Услуги</a>
             <a href="#portfolio" className="hover:text-primary transition-colors">Портфолио</a>
             <a href="#testimonials" className="hover:text-primary transition-colors">Отзывы</a>
@@ -125,9 +127,11 @@ const Index = () => {
               Качественный ремонт квартир, домов и офисов. Используем только проверенные материалы премиум-класса
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8 py-6">
-                <Icon name="Calculator" size={20} className="mr-2" />
-                Рассчитать стоимость
+              <Button size="lg" className="text-lg px-8 py-6" asChild>
+                <a href="#calculator">
+                  <Icon name="Calculator" size={20} className="mr-2" />
+                  Рассчитать стоимость
+                </a>
               </Button>
               <Button size="lg" variant="outline" className="text-lg px-8 py-6">
                 <Icon name="Phone" size={20} className="mr-2" />
@@ -179,6 +183,18 @@ const Index = () => {
               </p>
             </Card>
           </div>
+        </div>
+      </section>
+
+      <section id="calculator" className="py-20 px-4 bg-gradient-to-br from-primary/5 to-secondary/5">
+        <div className="container mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Калькулятор стоимости</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Рассчитайте примерную стоимость вашего ремонта за 1 минуту
+            </p>
+          </div>
+          <Calculator />
         </div>
       </section>
 
